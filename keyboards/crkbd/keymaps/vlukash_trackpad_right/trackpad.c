@@ -64,7 +64,7 @@ void pointing_device_task(void){
     if (isScrollMode)
     {
       currentReport.h = dx/SCROLL_SPEED_DIVIDER;
-      currentReport.v = dy/SCROLL_SPEED_DIVIDER;
+      currentReport.v = -dy/SCROLL_SPEED_DIVIDER;
     }
     else
     {

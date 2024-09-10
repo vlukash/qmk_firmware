@@ -49,12 +49,16 @@ enum custom_keycodes {
 #define KC_LVAD  RGB_VAD
 #define KC_LMOD  RGB_MOD
 
-#define KC_CTLA CTL_T(KC_A)
-#define KC_CTLSC CTL_T(KC_SCLN)
+#define KC_WINA LWIN_T(KC_A)
+#define KC_WINSC RWIN_T(KC_SCLN)
+
+#define KC_LALTG LALT_T(KC_GRAVE)
+
 #define KC_SFTZ SFT_T(KC_Z)
 #define KC_SFTSL SFT_T(KC_SLSH)
-#define KC_WINX LWIN_T(KC_X)
-#define KC_WINDO RWIN_T(KC_DOT)
+
+#define KC_CTLX CTL_T(KC_X)
+#define KC_CTLDO CTL_T(KC_DOT)
 
 #define KC_MBTN1  MBTN1
 #define KC_SCRL   SCRL
@@ -64,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  BSPC,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-        TAB,  CTLA,     S,     D,     F,     G,                      H,     J,     K,     L, CTLSC,  QUOT,
+        TAB,  WINA,     S,     D,     F,     G,                      H,     J,     K,     L, WINSC,  QUOT,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      GRAVE,  SFTZ,  WINX,     C,     V,     B,                      N,     M,  COMM, WINDO, SFTSL,BSLASH,
+      LALTG,  SFTZ,  CTLX,     C,     V,     B,                      N,     M,  COMM, CTLDO, SFTSL,BSLASH,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   LOWER,   SPC,  SCRL,    MBTN1,   ENT, RAISE
                               //`--------------------'  `--------------------'
@@ -74,21 +78,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_kc(
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC, XXXXX,  PGDN,  PSCR,  PGUP,  LBRC,                   RBRC,     7,     8,     9, XXXXX, XXXXX,
+        ESC, XXXXX,  PGUP,  PSCR,  PGDN,  LBRC,                   RBRC,     7,     8,     9, XXXXX, XXXXX,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX, LCTRL,  PLUS,  MINS,   EQL,  LPRN,                   RPRN,     4,     5,     6, RCTRL, XXXXX,
+      XXXXX,  LWIN,  PLUS,  MINS,   EQL,  LPRN,                   RPRN,     4,     5,     6,  RWIN, XXXXX,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX,  LSFT,  HOME, XXXXX,   END,  LCBR,                   RCBR,     1,     2,     3,  RSFT, XXXXX,
+       LALT,  LSFT,  HOME, XXXXX,   END,  LCBR,                   RCBR,     1,     2,     3,  RSFT, XXXXX,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LOWER,   SPC,  SCRL,    MBTN1,   ENT,     0
+                                  LOWER,   SPC,  SCRL,     BTN2,   ENT,     0
                               //`--------------------'  `--------------------'
   ),
 
   [_RAISE] = LAYOUT_kc(
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC, XXXXX,    F7,    F8,    F9,   F10,                   BTN2,  BTN2,  MNXT,  MPRV,  MPLY,  MSTP,
+        ESC, XXXXX,    F7,    F8,    F9,   F10,                  XXXXX, XXXXX,  MNXT,  MPRV,  MPLY,  MSTP,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX, LCTRL,    F4,    F5,    F6,   F11,                   LEFT,  DOWN,    UP, RIGHT, RCTRL, XXXXX,
+      XXXXX,  LWIN,    F4,    F5,    F6,   F11,                   LEFT,  DOWN,    UP, RIGHT,  RWIN, XXXXX,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       XXXXX,  LSFT,    F1,    F2,    F3,   F12,                  XXXXX, XXXXX,  VOLU,  VOLD,  MUTE,  RSFT,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
